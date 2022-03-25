@@ -3,7 +3,7 @@ var router = express.Router();
 var connector = require("../connect");
 router.get("/createtable", (req, res) => {
   connector.query(
-    "CREATE TABLE authors (first_name varchar(50), last_name varchar(50), dob varchar(10), dod varchar(10))",
+    "CREATE TABLE authors (first_name varchar(50), last_name varchar(50), dob date, dod date)",
     function (err, results, fields) {
       res.json({ err, results, fields });
     }
